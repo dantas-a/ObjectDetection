@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-type = 'train'  # ou 'validation'
+type = 'test'  # 'train' ou 'validation' ou 'test'
 
 labels_not_yolo_path = "../software/OIDv4_ToolKit/OID/Dataset/"+type+"/Vehicle registration plate/Labels_Not_Yolo"
 labels_path = "../software/OIDv4_ToolKit/OID/Dataset/"+type+"/Vehicle registration plate/labels"
