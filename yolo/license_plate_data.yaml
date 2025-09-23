@@ -1,0 +1,5 @@
+
+train: ../software/OIDv4_ToolKit/OID/Dataset/train/Vehicle registration plate/images
+val: ../software/OIDv4_ToolKit/OID/Dataset/validation/Vehicle registration plate/images
+nc: 1
+names: ['vehicle_registration_plate']
