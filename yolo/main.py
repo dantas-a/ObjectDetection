@@ -79,9 +79,11 @@ while ret:
                     # process license plate image for the OCR
                     # convert image to grey scale
                     license_plate_image_grey = cv2.cvtColor(license_plate_image, cv2.COLOR_BGR2GRAY)
-                    # Everything under 120 -> 0, everything over 120 -> 255
-                    # TO UPGRADE
-                    _, license_plate_image_thresh = cv2.threshold(license_plate_image_grey,120,255,cv2.THRESH_BINARY_INV)
+                    
+                    # blur the grayscale license plate to reduce noise
+                    license_plate_image_grey_blur = cv2.GaussianBlur(license_plate_image_grey,(3,3),0)
+                    # binarize using Otsu's method
+                    _, license_plate_image_thresh = cv2.threshold(license_plate_image_grey_blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
                     
                     
                     # we display the processed license plate image in the video output
@@ -101,11 +103,7 @@ while ret:
                     license_plate_display = cv2.cvtColor(license_plate_display, cv2.COLOR_GRAY2BGR)
                     frame_res[overlay_y:overlay_y+display_height, overlay_x:overlay_x+display_width] = license_plate_display
                     
-                    #plt.imshow(license_plate_image_thresh, cmap='gray')
-                    #plt.show()
-                    
-                    # recover the text on the license plate with an OCR 
-                    # TO UPGRADE
+                    # recover the text on the license plate with an OCR
                     license_plate_text, confidence_text_extraction = read_license_plate(license_plate_image_thresh)
                     
                     # we write the license plate text on the output video frame
