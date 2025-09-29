@@ -1,4 +1,5 @@
 # ObjectDetection
+
 This project provides a complete pipeline for vehicle and license plate detection and tracking. It uses a YOLO model trained specifically for license plate detection and another YOLO model for car detection. The SORT algorithm is integrated to track detected cars across video frames. Detected license plates are associated with their corresponding vehicles, and Optical Character Recognition (OCR) is applied to read the license plate numbers from the detected regions.
 
 ## Instructions
@@ -53,30 +54,31 @@ This project provides a complete pipeline for vehicle and license plate detectio
 
 For any issues or questions, please refer to the documentation of each toolkit or open an issue in this repository.
 
-### 7. Suggested Folder Structure
+## 7. Suggested Folder Structure
 
-----------------------------------------------
-/ObjectDetection
-    /Python_Env
-    /software
-        /OIDv4_ToolKit
-            /OID
-                /csv_folder
-                /Dataset
-                    /train
-                        /Vehicle registration plate
-                            /images
-                            /labels
-                            /Labels_Not_Yolo
-                    /validation
-                    /test 
-            ...
-    /yolo
-        /saved_model
-        /sort
-        /videos
-        *.py
-        result.mp4
-        result.csv
-        yolov8n.pt
-----------------------------------------------
+Below is the recommended directory layout for this project:
+
+```
+ObjectDetection/
+├── Python_Env/                # (Optional) Python virtual environment
+├── software/
+│   └── OIDv4_ToolKit/
+│       └── OID/
+│           ├── csv_folder/
+│           └── Dataset/
+│               ├── train/
+│               │   └── Vehicle registration plate/
+│               │       ├── images/
+│               │       ├── labels/
+│               │       └── Labels_Not_Yolo/
+│               ├── validation/
+│               └── test/
+├── yolo/
+│   ├── saved_model/
+│   ├── sort/
+│   ├── videos/
+│   ├── result.mp4
+│   ├── result.csv
+│   ├── yolov8n.pt
+│   └── *.py                  # Python scripts (e.g., main.py, util.py)
+```
