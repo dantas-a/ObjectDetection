@@ -1,7 +1,7 @@
 import os
 from ultralytics import YOLO
 
-# Paths
+# Paths to datasets
 dataset_path = '../software/OIDv4_ToolKit/OID/Dataset'
 train_images = os.path.join(dataset_path, 'train/Vehicle registration plate/images')
 train_labels = os.path.join(dataset_path, 'train/Vehicle registration plate/labels')

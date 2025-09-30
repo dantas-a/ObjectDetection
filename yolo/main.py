@@ -118,7 +118,7 @@ while ret:
                                         'text': license_plate_text,
                                         'text_score': confidence_text_extraction}
                     }
-                    
+        # save the frame in the video        
         out.write(frame_res)                    
 
 # write results
