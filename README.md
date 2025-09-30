@@ -2,6 +2,12 @@
 
 This project provides a complete pipeline for vehicle and license plate detection and tracking. It uses a YOLO model trained specifically for license plate detection and another YOLO model for car detection. The SORT algorithm is integrated to track detected cars across video frames. Detected license plates are associated with their corresponding vehicles, and Optical Character Recognition (OCR) is applied to read the license plate numbers from the detected regions.
 
+## Example
+
+Here is an example :
+
+![Test](./extracted_picture_from_the_video.png)
+
 ## Instructions
 
 ### 1. Environment Setup
